@@ -1,2 +1,19 @@
-yolov8_env/
+#Ignorar arquivos pesaddos
+data/
+videos/
+outputs/
+models/
+
+# Ignorar logs e arquivos temporários
+*.log*.tmp
+*.cache
+
+# Ignorar arquivos do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar ambientes virtuais
+venv/
 yolov8_env/
