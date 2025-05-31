@@ -14,7 +14,6 @@ def detectar_sinal_sos(frame):
             thumb_tip = handLms.landmark[mp_hands.HandLandmark.THUMB_TIP]
             index_tip = handLms.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
 
-            # Se o dedão estiver abaixo do indicador, consideramos como gesto (simplificado)
             if thumb_tip.y > index_tip.y:
                 return True
     return False
