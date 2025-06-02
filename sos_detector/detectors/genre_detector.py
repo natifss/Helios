@@ -5,7 +5,6 @@ from deepface import DeepFace
 model_yolo_pessoas = YOLO("yolov8n.pt")
 
 def analisar_genero_deepface(imagem_pessoa_recortada_rgb):
-   
     try:
         analises = DeepFace.analyze(
             img_path=imagem_pessoa_recortada_rgb,
@@ -61,6 +60,12 @@ def detectar_mulher_deepface(frame):
             
             genero_identificado = analisar_genero_deepface(imagem_pessoa_roi)
             print(f"INFO DeepFace: Gênero da pessoa no ROI: {genero_identificado}") 
+
+            cor_caixa = (0, 255, 0) if genero_identificado == "Woman" else (255, 0, 0)
+            texto_legenda = "Mulher" if genero_identificado == "Woman" else "Homem"
+
+            cv2.rectangle(frame, (x1_int, y1_int), (x2_int, y2_int), cor_caixa, 2)
+            cv2.putText(frame, texto_legenda, (x1_int, y1_int - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, cor_caixa, 2)
 
             if genero_identificado == "Woman":
                 print("SUCESSO: Mulher identificada pela DeepFace!") 
