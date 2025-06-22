@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-import numpy as np
+# import numpy as np # numpy não estava sendo usado, pode ser omitido
 
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=2)
@@ -43,18 +43,15 @@ def detectar_sinal_sos(frame):
 
             if dedao_dentro and dedos_fechados:
                 legenda = "Sinal de SOS detectado"
-                cor = (0, 0, 255) 
+                cor = (0, 0, 255)
                 sinal_sos_detectado = True
             else:
                 legenda = "Mao"
                 cor = (200, 200, 200)
 
-            # Desenhar caixa e legenda
             cv2.rectangle(frame, (x_min, y_min), (x_max, y_max), cor, 2)
             cv2.putText(frame, legenda, (x_min, y_min - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, cor, 2)
-
-            # Desenhar landmarks (opcional)
             mp_draw.draw_landmarks(frame, handLms, mp_hands.HAND_CONNECTIONS)
 
     return sinal_sos_detectado

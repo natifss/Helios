@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_teste_20250603-163216</folder>
+	<filename>video_teste_20250603-163216_frame_0011.jpg</filename>
+	<path>C:\Helios\sos_detector\frames_para_anotacao\video_teste_20250603-163216\video_teste_20250603-163216_frame_0011.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MULHER</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>299</xmin>
+			<ymin>124</ymin>
+			<xmax>406</xmax>
+			<ymax>229</ymax>
+		</bndbox>
+	</object>
+</annotation>

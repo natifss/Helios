@@ -5,7 +5,9 @@ outputs/
 models/
 
 # Ignorar logs e arquivos temporários
-*.log*.tmp
+# *.log*.tmp # Sua regra original
+*.log       # Sugestão mais comum para logs
+*.tmp
 *.cache
 
 # Ignorar arquivos do Python
@@ -17,3 +19,25 @@ __pycache__/
 # Ignorar ambientes virtuais
 venv/
 yolov8_env/
+
+#LabelImg
+LabelImg local settings
+labelImg.ini
+labelImgSettings.pkl
+predefined_classes.txt
+
+Label Studio data 
+label_studio_data/
+*.sqlite3 
+*.db    
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
